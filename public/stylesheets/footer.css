@@ -1,0 +1,102 @@
+.contactos{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.contactos .texto h1{
+    font-size: 1rem;
+    font-weight: bolder;
+    border-left: 9px solid blue;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+.contactos .texto p{
+    font-size: 12px;
+    margin: 1rem 0;
+}
+
+.formulario{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario-grupo{
+    margin: 1rem 0;
+}
+
+.formulario input{
+    padding: 1rem 4rem;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    border: 1px solid #ededed;
+
+}
+
+.formulario textarea{
+    padding: 1rem 4rem 4rem;
+    outline: none;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.w100{
+    width: 100%;
+}
+
+.copy{
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 12px;
+    background: #000000c7;
+    color: white;
+}
+
+.buttom-comentario{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: .7s all ease-in-out;
+}
+
+.buttom-comentario:hover{
+    background-color: #00bfff5c;
+    border-color: transparent;
+}
+
+@media only screen and (min-width:450px) {
+    .contactos .texto h1{
+        font-size: 2rem;
+    }
+    .contactos .texto p{
+        font-size: 1rem;
+    }
+    .copy{
+        font-size: 1rem;
+    }
+}
+@media only screen and (min-width:768px) {
+    .contactos{
+        display: flex;
+        flex-direction: row;
+    }
+    .texto{
+        width: 90%;
+    }
+    .contactos .texto h1{
+        width: 100%;
+    }
+    .contactos .texto p{
+        font-size: 20px;
+    }
+}

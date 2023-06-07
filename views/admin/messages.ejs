@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/messages.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/navigation.ejs') %>
+
+    <div class="container">
+        <div class="title">
+            <h1>Mensajes no leidos: <b id="no-leido"><%= messages.filter(data => data.read == 0).length %></b></h1>
+        </div>
+        <div class="row">
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOMBRE</th>
+                            <th>EMAIL</th>
+                            <th>ELIMINAR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% messages.forEach((message,index) => { %>
+                            <tr>
+                                <td><%= index + 1 %></td>
+                                <td><%= message.username %></td>
+                                <td><%= message.email %></td>
+                                <td class="botones">
+                                    <a href="#" onclick="messages(event, '<%= message.message %>','<%= message.id %>','<%= message.read %>')">
+                                        <i class="fa-solid fa-eye" style="color: blue;"></i>
+                                    </a>
+                                    <a href="/delete-message/<%= message.id %>">
+                                        <i class="fa-solid fa-trash" style="color: red;"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="content">
+                <p id="comentario"></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/javascripts/messagesadmin.js"></script>
+
+</html>

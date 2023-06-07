@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/course.css' />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+</head>
+<body>
+    <%- include('../partials/navigation.ejs') %>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="title">Category</h1>
+            <a href="/create-category" class="btn green">Create category</a>
+        </div>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% categories.forEach((category,index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= category.title %></td>
+                            <td>
+                                <a href="/update-category/<%= category.id %>" class="btn blue">Edit</a>
+                                <a href="/delete-category/<%= category.id %>" class="btn red">Delete</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

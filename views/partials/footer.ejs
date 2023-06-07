@@ -1,0 +1,35 @@
+<link rel='stylesheet' href='/stylesheets/footer.css' />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+
+<footer>
+    <section class="contactos">
+      <div class="texto">
+        <h1>Contactanos</h1>
+        <p>Para más información envianos un mensaje personal</p>
+      </div>
+      <div class="formulario">
+        <form action="" onSubmit="consultas(event)">
+          <div class="formulario-grupo">
+            <input type="text" placeholder="Ingrese su nombre" required title="Complete el campo">
+          </div>
+          <div class="formulario-grupo">
+            <input type="email" placeholder="Ingrese su email" required="Ingrese un email">
+          </div>
+          <div class="formulario-grupo">
+            <textarea type="text" name="g-msg"
+                      placeholder='Message...' maxlength="100"></textarea>
+          </div>
+          <div class="formulario-grupo">
+            <input type="submit" placeholder="Enviar" class="buttom-comentario w100">
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="copy">
+      <p>2023 &copy; - Instituto Nuevos Horizontes</p>
+    </section>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/javascripts/consultas.js"></script>

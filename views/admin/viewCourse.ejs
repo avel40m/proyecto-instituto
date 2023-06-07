@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/viewcourse.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+</head>
+<body>
+    <%- include('../partials/navigation.ejs') %>
+    <div class="container">
+        <h1>Course: <b><%= course[0].title %></b></h1>
+        <div class="card">
+            <div class="card-content">
+                <div class="card-resumen">
+                    <p>State: <b><%= course[0].state %></b></p>
+                    <% if(course[0].enabled) { %>
+                    <p>Visibility: <b>Publishing</b></p>
+                    <% } else { %> 
+                        <p>Visibility: <b>Not publishing</b></p>
+                    <% } %>
+                    <p>Start: <b><%= course[0].start.getDate() %>/<%= course[0].start.getMonth() + 1 %>/<%= course[0].start.getFullYear() %></b></p>
+                    <p>Category: <b><%= course[0].category %></b></p>
+                </div>
+                <p><%= course[0].description %></p>
+            </div>
+            <div class="card-image">
+                <img src="<%= course[0].image %>" alt="<%= course[0].title %>" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

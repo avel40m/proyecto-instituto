@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Inicio</title>
+  <link rel="shortcut icon" href="/images/icon.jpg" />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/index.css' />
+  <link rel='stylesheet' href='/stylesheets/gotop.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <%- include('./partials/navigation.ejs') %>
+    <section class="portada">
+      <div class="principal">
+        <h1>Instituto Nuevos Horizontes</h1>
+        <p>“La educación no es preparación para la vida; la educación es la vida en sí misma”</p>
+        <form action="/search-course" method="post" class="formulario-buscar">
+          <input type="text" class="search" name="title" placeholder="Buscar cursos">
+          <input type="submit" value="Buscar" class="buttom">
+        </form>
+      </div>
+    </section>
+    <main class="cuerpo">
+      <div class="title">
+        <p>Lista de cursos</p>
+        <a href="/all-courses">Ver todos</a>
+      </div>
+      <div class="card">
+        <% courses.forEach((course,index)=> { %>
+          <div class="card-container card-show">
+            <p class="category"><%= course.category %></p>
+            <figure>
+              <img src="<%= course.image %>" alt="titulo">
+            </figure>
+            <div class="contenido">
+              <h3>
+                <%= course.title %>
+              </h3>
+              <p>
+                <%= course.description %>
+              </p>
+              <a href="/detail-course/<%= course.id %>">Leer más</a>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+    </main>
+    </div>
+    <div class="go-top-container">
+      <div class="go-top-button">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+    </div>
+  <%- include('./partials/footer.ejs') %>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/javascripts/gotop.js"></script>
+<script src="/javascripts/checkdatapersonal.js"></script>
+
+</html>

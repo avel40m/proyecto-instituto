@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ingresar</title>
+    <link rel="shortcut icon" href="/images/icon.jpg" /></head>
+<body>
+    <%- include('./partials/navigation.ejs') %>
+   
+    <form onsubmit="login(event)" class="login">
+        <h1 class="title">
+            Inició de session
+        </h1>
+        <div>
+            <input type="text" class="input" name="username" placeholder="Ingresar usuario">
+        </div>
+        <div>
+            <input type="password" class="input" name="password" placeholder="Ingresar contraseña">
+        </div>
+        <div>
+            <input type="submit" value="Ingresar" class="button btn-login">
+        </div>
+    </form>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/javascripts/login.js"></script>
+</html>

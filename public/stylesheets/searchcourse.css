@@ -1,0 +1,137 @@
+.cuerpo h1{
+    margin: 1rem;
+}
+.card{
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+}
+
+.card-container{
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+}
+
+.card-container:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+.card-container img{
+    width: 100%;
+    height: 210px;
+}
+
+.card-container .contenido{
+    padding: 15px;
+    text-align: center;
+}
+
+.card-container .contenido p{
+    line-height: 1.5;
+    color: #6a6a6a;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card-container .contenido h3{
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.card-container .contenido a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: #2fb4cc;
+    border: 1px solid #2fb4cc;
+    border-radius: 4px;
+    transition: all 400ms ease;
+}
+
+.card-container .contenido a:hover{
+    background-color: #2fb4cc;
+    color: #fff;
+}
+
+.category{
+    position: absolute;
+    color: white;
+    background: black;
+    padding: 12px;
+    font-size: larger;
+    font-weight: 700;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    cursor: pointer;
+}
+
+.filter li{
+    list-style: none;
+    font-size: 18px;
+    transition: .7s all ease-in-out;
+    padding: 10px;
+}
+
+.filter li:hover{
+    color: skyblue;
+}
+
+.active{
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid skyblue;
+    border-radius: 10px;
+    background-color: skyblue;
+    color: white;
+}
+
+@media only screen and (max-width:900px) {
+    .card{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .filter{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3,1fr);    
+        text-align: center;
+    }
+    .filter li {
+        font-size: 1rem;
+        padding: 8px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .card{
+        width: 90%;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .filter{
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .cuerpo h1{
+        font-size: 1rem;
+    }
+}

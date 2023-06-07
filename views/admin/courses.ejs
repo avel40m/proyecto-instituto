@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/course.css' />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <%- include('../partials/navigation.ejs') %>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="title">Courses</h1>
+            <a href="/create-course" class="btn green">Create course</a>
+        </div>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% courses.forEach((course,index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= course.title %></td>
+                            <td><%= course.category %></td>
+                            <td>
+                                <a href="/show-students/<%= course.id %>" class="btn green">Students</a>
+                                <a href="/view-course/<%= course.id %>" class="btn skyblue">View</a>
+                                <a href="/update-course/<%= course.id %>" class="btn blue">Edit</a>
+                                <a href="/delete-couse/<%= course.id %>" class="btn red">Delete</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

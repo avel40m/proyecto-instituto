@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/datapersonal.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/navigation.ejs') %>
+    <div class="container">
+        <h1>Mis datos personales</h1>
+        <form action="" onsubmit="updateData(event)">
+            
+            <div class="group"> 
+                <p class="title">Apellido y Nombre</p>
+                <div class="group-inputs">
+                    <div class="group-input">
+                        <input type="text" name="apellido" required value="<%= users.length === 1 ? users[0].last_name : '' %>">
+                        <small class="mandatory">Apellido *</small>
+                    </div>
+                    <div class="group-input">
+                        <input type="text" name="primernombre" required value="<%= users.length === 1 ? users[0].first_name : '' %>">
+                        <small class="mandatory">Primer Nombre *</small>
+                    </div>
+                    <div class="group-input">
+                        <input type="text" name="segundonombre" value="<%= users.length === 1 ? users[0].second_name : '' %>">
+                        <small>Segundo Nombre</small>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <p class="title">Dirección</p>
+                <div class="group-inputs">
+                    <div class="group-input">
+                        <input type="text" name="ciudad" required value="<%= users.length === 1 ? users[0].city : '' %>">
+                        <small class="mandatory">Ciudad *</small>
+                    </div>
+                    <div class="group-input">
+                        <input type="text" name="provincia" required value="<%= users.length === 1 ? users[0].province : '' %>">
+                        <small class="mandatory">Provincia *</small>
+                    </div>
+                    <div class="group-input">
+                        <input type="text" name="pais" value="<%= users.length === 1 ? users[0].country : '' %>">
+                        <small>Pais</small>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <p class="title">Contactos</p>
+                <div class="group-inputs">
+                    <div class="group-input">
+                        <input type="number" name="telefono" required value="<%= users.length === 1 ? users[0].phone : '' %>">
+                        <small class="mandatory">Telefono *</small>
+                    </div>
+                    <div class="group-input">
+                        <input type="email" name="email" required value="<%= users.length === 1 ? users[0].email : '' %>">
+                        <small class="mandatory">Correo electronico *</small>
+                    </div>
+                    <div class="group-input">
+                        <input type="text" name="red" value="<%= users.length === 1 ? users[0].social_network : '' %>">
+                        <small>Redes sociales</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-buttom">
+                <input type="submit" value="Actualizar datos" class="buttom">
+            </div>
+        </form>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/javascripts/updatedatapersonal.js"></script>
+</body>
+</html>

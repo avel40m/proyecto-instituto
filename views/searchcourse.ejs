@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/searchcourse.css' />
+    <link rel='stylesheet' href='/stylesheets/gotop.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar curso</title>
+    <link rel="shortcut icon" href="/images/icon.jpg" />
+
+</head>
+<body>
+    <%- include('./partials/navigation.ejs') %>
+    <% if(courses.length == 0) {%>
+        <h1 style="margin: 2rem 0;">No se encontraron resultados</h1>
+    <% } else {%>
+        <h1>Cantidad de cursos: (<%= courses.length %>)</h1>
+    <% }%>
+    <main class="cuerpo">
+       
+        <div class="card">
+          <% courses.forEach((course,index)=> { %>
+            <div class="card-container">
+              <p class="category"><%= course.category %></p>
+              <figure>
+                <img src="<%= course.image %>" alt="titulo">
+              </figure>
+              <div class="contenido">
+                <h3>
+                  <%= course.title %>
+                </h3>
+                <p>
+                  <%= course.description %>
+                </p>
+                <a href="/detail-course/<%= course.id %>">Leer más</a>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+      </main>
+      
+    <div class="go-top-container">
+        <div class="go-top-button">
+          <i class="fas fa-chevron-up"></i>
+        </div>
+     </div>
+    <%- include('./partials/footer.ejs') %>
+
+</body>
+<script src="/javascripts/gotop.js"></script>
+
+</html>

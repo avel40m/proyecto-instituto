@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/createcourse.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/navigation.ejs') %>
+    <div class="container">
+        <h1>Create course</h1>
+        <form action="create-course" method="post" enctype="multipart/form-data"> 
+            <div class="form-group">
+                <div class="form-group-input">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-group-input-text" name="title" placeholder="Enter title">
+                </div>
+                <div class="form-group-input">
+                    <label for="">Select category</label>
+                    <select name="category" id="">
+                        <% categories.forEach((category) => { %>
+                        <option value="<%= category.id %>"><%= category.title %></option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group-input">
+                    <label for="">Visibility</label>
+                    <div class="form-group-radio">
+                        <input name="enabled" type="radio" id="true" value="1"> <label for="true">True</label> 
+                        <input name="enabled" type="radio" id="false" value="0"> <label for="false">False</label>
+                    </div>
+                </div>                
+                <div class="form-group-input">
+                    <label for="">State</label>
+                    <select name="state" id="">
+                        <option value="active">Active</option>
+                        <option value="deleyed">Delaye</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group-input">
+                    <label for="">Image</label>
+                    <input type="file" name="image">
+                </div>                
+                <div class="form-group-input">
+                    <label for="">Start course</label>
+                    <input type="date" name="start" class="form-group-input-text">
+                </div>
+            </div>
+            <div  class="form-group">
+                <div class="form-group-input w-70">
+                    <label for="">Description</label>
+                    <textarea name="description" id="" cols="30" rows="10"></textarea>
+                </div>                
+            </div>
+            <div class="form-group-buttom">
+                <input type="submit" value="Save course" class="buttom">
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

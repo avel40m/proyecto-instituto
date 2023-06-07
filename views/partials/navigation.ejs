@@ -1,0 +1,55 @@
+<link rel='stylesheet' href='/stylesheets/navigation.css' />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<header>
+  <a href="/">
+    <img class="logo" src="/images/icon.jpg" alt="logo">
+  </a>
+  <button class="abrir-menu" id="abrir"><i class="fa-solid fa-bars"></i></button>
+  <nav class="nav" id="nav">
+    <ul class="nav-list">
+      <button class="cerrar-menu" id="cerrar"><i class="fa-solid fa-xmark"></i></button>
+      <% if(permission===null){ %>
+        <li>
+          <a href="/login">Ingresar</a>
+        </li>
+        <li>
+          <a href="/register">Registrarme</a>
+        </li>
+        <% } %>
+
+          <% if(permission=='admin' ){ %>
+            <li>
+              <a href="/courses">Cursos</a>
+            </li>
+            <li>
+              <a href="/message">Mensajes</a>
+              <div class="mensajes"></div>
+            </li>
+            <li>
+              <a href="/category">Categoria</a>
+            </li>
+            <% } %>
+              <% if(permission=='client' ){ %>
+                <li>
+                  <a href="/datapersonal">Datos personales</a>
+                </li>
+                <li>
+                  <a href="/my-courses">Mis cursos</a>
+                </li>
+                <% } %>
+                  <% if(permission !==null){ %>
+                    <li>
+                      <a href="/cerrar-sesion">cerrar sesion</a>
+                    </li>
+                    <% } %>
+
+    </ul>
+  </nav>
+</header>
+
+<script src="/javascripts/mensajes.js"></script>
+<script src="/javascripts/menunavbar.js"></script>

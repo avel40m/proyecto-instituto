@@ -1,0 +1,89 @@
+.group{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.group .title{
+    font-size: 20px;
+    margin: 1rem 0;
+    font-weight: 700;
+    font-family: math;
+}
+
+.group-inputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.group-input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.group-input input{
+    border: 1px solid #d3d1d1;
+    padding: 1rem  3rem;
+    border-radius: 10px;
+    outline: none;
+}
+
+.form-buttom{
+    display: flex;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.form-buttom .buttom{
+    padding: 1rem 3rem;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #0000ff75;
+    color: #0000ff75;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .7s ease-in-out;
+}
+
+.form-buttom .buttom:hover{
+    color: white;
+    background-color: blue;
+}
+
+.form-buttom .buttom:active{
+    color: white;
+    background-color: rgb(2, 2, 56);
+}
+
+.mandatory{
+   font-weight: bold; 
+}
+
+@media only screen and (max-width:900px){
+    .group-input input{
+        padding: 1rem  2rem;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .group-input input {
+        padding: 10px 1rem;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .group-inputs{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .container h1{
+        font-size: 1rem;
+    text-align: center;
+    }
+}

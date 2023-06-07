@@ -1,0 +1,84 @@
+.title{
+    margin: 1rem;
+}
+
+.table{
+    width: 450px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+th {
+    resize: horizontal;
+    /* Makes the cell resizable */
+}
+
+th::-webkit-resizer {
+    background-color: transparent;
+    padding: 20px;
+}
+
+tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background-color: #e3e1e1;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    position: relative;
+    top: -60px;
+    width: 50%;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media only screen and (max-width:768px) {
+    .row{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+    .content{
+        width: 100%;
+        position: static;
+        top: -8px;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .content{
+        width: 100%;
+        position: static;
+        top: -8px;
+    }
+    .title{
+        font-size: 12px;
+    }
+    table{
+        width: 80%;
+        margin: auto;
+    }
+}

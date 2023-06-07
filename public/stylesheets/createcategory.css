@@ -1,0 +1,36 @@
+.input{
+    margin: 1rem 0;
+    padding: 1rem 10rem 1rem 12px;
+    border: 1px solid #00000047;
+    border-radius: 12px;
+}
+
+.green{
+    color: green;
+    border: 1px solid rgb(70, 153, 70);
+}
+
+.green:hover{
+    background-color: green;
+    color: white;
+    border-color: white;
+}
+
+.blue{
+    color: blue;
+    border: 1px solid #0000f96b;
+}
+
+.blue:hover{
+    background-color: blue;
+    color: white;
+    border-color: white;
+}
+
+.btn{
+    padding: 10px 2rem;
+    background-color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .7s all ease-in-out;
+}

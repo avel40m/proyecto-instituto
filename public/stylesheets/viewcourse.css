@@ -1,0 +1,16 @@
+.card{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.card-image img{
+    width: 80vh;
+}
+
+.card-resumen{
+    display: flex;
+    justify-content: space-around;
+    gap: 3rem;
+    margin: 2rem 0;
+}

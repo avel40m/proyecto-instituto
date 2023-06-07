@@ -1,0 +1,66 @@
+.blue{
+    color: blue;
+    border: 1px solid #0000f96b;
+}
+
+.blue:hover{
+    background-color: blue;
+    color: white;
+    border-color: white;
+}
+
+.red{
+    color: red;
+    border: 1px solid rgb(214, 72, 72);
+}
+
+.red:hover{
+    background-color: red;
+    border-color: white;
+    color: white;
+}
+
+.green{
+    color: green;
+    border: 1px solid rgb(70, 153, 70);
+}
+
+.green:hover{
+    background-color: green;
+    color: white;
+    border-color: white;
+}
+
+.btn{
+    padding: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .7s all ease-in-out;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+th {
+    resize: horizontal;
+    /* Makes the cell resizable */
+}
+
+th::-webkit-resizer {
+    background-color: transparent;
+    padding: 20px;
+}

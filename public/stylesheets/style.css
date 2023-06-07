@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;0,400;1,600;1,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body::-webkit-scrollbar
+{
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb
+{
+  background-color: rgb(90, 105, 133);
+  border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb:hover
+{
+  background-color: rgb(66, 81, 109);
+}
+
+.container{
+  width: 90%;
+  margin: auto;
+  padding: 1rem;
+}
+
+.row{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
